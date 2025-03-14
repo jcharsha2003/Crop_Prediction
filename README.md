@@ -1,8 +1,8 @@
-# Brain Stroke Prediction Project
+# Telangana Crop Prediction Project
 
 ## Overview
 
-This project aims to predict the risk of stroke based on user input using machine learning models. It is built with Streamlit for the web application interface, and utilizes clustering and classification techniques for accurate predictions.
+This project aims to predict the risk of stroke based on user input using machine learning models. It is built with Streamlit for the web application interface, and XGBoost techniques for accurate predictions.
 
 ## Requirements
 
