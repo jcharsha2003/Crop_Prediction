@@ -20,6 +20,12 @@ zone_mapping = {
     "Central Zone": 1, 
     "Southern Zone": 2
 }
+district_to_zone = {
+    "KARIMNAGAR": "Northern Zone", "ADILABAD": "Northern Zone", "NIZAMABAD": "Northern Zone",
+    "WARANGAL": "Central Zone", "MEDAK": "Central Zone", "KHAMMAM": "Central Zone",
+    "NALGONDA": "Southern Zone", "MAHBUBNAGAR": "Southern Zone", 
+    "RANGAREDDI": "Southern Zone", "HYDERABAD": "Southern Zone"
+}
 
 # Load Lottie animation
 def load_lottiefile(filepath: str):
@@ -51,12 +57,12 @@ def district_season():
         season = st.selectbox("Select the Current Season:", options=list(season_mapping.keys()))
         user_data["Season"] = season_mapping[season]  # Store encoded value
 
-        # Agricultural Zone Selection
-        zone = st.selectbox("Select Your Agricultural Zone:", options=list(zone_mapping.keys()))
+        # # Agricultural Zone Selection
+        # zone = st.selectbox("Select Your Agricultural Zone:", options=list(zone_mapping.keys()))
+        zone = district_to_zone[district]
         user_data["A_C Zones"] = zone_mapping[zone]  # Store encoded value
 
-        # Next button to navigate to the next page
-        if st.button("Next (Farm Details)"):
+        if st.button("➡️ Next (Farm Details)"):
             st.session_state["current_page"] = "farm_soil_details"
             st.success("✅ Information saved! Proceeding to Farm Details.")
             st.rerun()

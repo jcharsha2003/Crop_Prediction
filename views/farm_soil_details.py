@@ -53,12 +53,12 @@ def farm_soil_details():
         user_data["Soil_Type"]=" ".join(soil_type.split()[1:])
         
         # Required fields from all pages that need to be checked
-
+        
 
        # Submit button with validation and navigation
         if st.button("📨 Submit & Proceed"):
 
-            required_fields = ["District_Name", "Season", "A_C Zones", "Area", "Production", "Soil_Type"]
+            required_fields = ["District_Name", "Season", "Area", "Production", "Soil_Type"]
 
             # Check if all required fields are present (without checking their values)
             missing_fields = [field for field in required_fields if field not in st.session_state.user_data]

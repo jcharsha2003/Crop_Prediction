@@ -48,17 +48,20 @@ lottie_predict_dark = load_lottiefile("./assets/area.json")
 # """, unsafe_allow_html=True)
 
 label_dicts = {
-    "District_Name": {0: "ADILABAD", 1: "KOMARAM BHEEM", 2: "KUMURAM BHEEM", 3: "KHAMMAM", 4: "MAHBUBABAD", 
-                       5: "MAHABUBABAD", 6: "MEDAK", 7: "NAGARKURNOOL", 8: "NIRMAL", 9: "NIZAMABAD", 10: "NIZAMABAD RURAL"},
+    "District_Name": {
+    0: "ADILABAD", 1: "HYDERABAD", 2: "KARIMNAGAR", 3: "KHAMMAM",
+    4: "MAHBUBNAGAR", 5: "MEDAK", 6: "NALGONDA", 7: "NIZAMABAD",
+    8: "RANGAREDDI", 9: "WARANGAL"
+},
     "Season": {0: "Kharif", 1: "Rabi", 2: "Whole Year"},
-    "A_C Zones": {0: "Northern Zone", 1: "Southern Zone", 2: "Central Zone"}
+    "A_C Zones": {0: "Northern Zone", 2: "Southern Zone", 1: "Central Zone"}
 }
 
 def crop_prediction():
     st.subheader("🔍 Review your information and make a prediction!")
     
     user_data = st.session_state.get("user_data", {})
-    required_fields = ["District_Name", "Season", "A_C Zones", "Area", "Production", "Soil_Type"]
+    required_fields = ["District_Name", "Season", "Area", "Production", "Soil_Type"]
     
     user_input = {
         "District_Name": user_data.get("District_Name", "Not Filled"),
